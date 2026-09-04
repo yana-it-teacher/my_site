@@ -264,6 +264,13 @@ body {
     width: 100%;
 }
 
+.search-status {
+    width: 100%;
+    padding: 28px;
+    color: #64748B;
+    text-align: center;
+}
+
 .book-card {
     width: 352px; /* У вашому макеті є картки по 352 та 360, використовуємо 1fr для гнучкості */
     flex: 1;
