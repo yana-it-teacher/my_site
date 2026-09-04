@@ -38,16 +38,16 @@
                 <div class="search-subtitle">Шукайте серед тисяч класичних та сучасних творів української та світової літератури</div>
             </div>
             
-            <div class="search-bar">
+            <form class="search-bar" id="book-search-form">
                 <div class="input-wrapper">
                     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                    <input type="text" placeholder="Пошук книги, автора або жанру...">
+                    <input id="book-search-input" type="search" placeholder="Пошук книги, автора або жанру..." autocomplete="off">
                 </div>
-                <button class="search-btn">
+                <button class="search-btn" type="submit">
                     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                     <span>Пошук</span>
                 </button>
-            </div>
+            </form>
         </section>
 
         <!-- Results Section -->
@@ -55,11 +55,11 @@
             <div class="section-header">
                 <div class="section-title-wrap">
                     <div class="section-title">Результати пошуку</div>
-                    <div class="badge-blue">3 знайдено</div>
+                    <div class="badge-blue" id="results-count">3 знайдено</div>
                 </div>
             </div>
             
-            <div class="grid">
+            <div class="grid" id="search-results">
                 <!-- Картка 1 -->
                 <div class="book-card">
                     <div class="card-top">
@@ -223,5 +223,6 @@
 
 </div>
 
+<script src="script.js" defer></script>
 </body>
 </html>
