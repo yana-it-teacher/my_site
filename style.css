@@ -261,7 +261,34 @@ body {
     display: flex;
     flex-direction: row;
     gap: 24px;
-    width: 100%;
+    padding: 10px 5px 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+    /* width: 100%; */
+}
+
+/* Ширина та висота скролбару */
+.grid::-webkit-scrollbar {
+  height: 8px; 
+}
+
+/* Трек (фон скролбару) */
+.grid::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px;
+}
+
+/* Повзунок (те, що ми тягнемо) */
+.grid::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+}
+
+/* Повзунок при наведенні */
+.grid::-webkit-scrollbar-thumb:hover {
+  background: #555; 
 }
 
 .search-status {
@@ -272,8 +299,9 @@ body {
 }
 
 .book-card {
-    width: 352px; /* У вашому макеті є картки по 352 та 360, використовуємо 1fr для гнучкості */
-    flex: 1;
+    /* width: 352px; - можна видалити, адже ми задамо це у flex */
+    flex: 0 0 352px; /* ЗАМІНИТИ flex: 1 на це (забороняє стискання) */
+    scroll-snap-align: start; /* Додано для плавного прилипання при скролі */
     background: #FFFFFF;
     border: 1px solid #E2E8F0;
     box-shadow: 0px 4px 12px rgba(15, 23, 42, 0.0196078);
@@ -403,7 +431,8 @@ body {
 
 /* Заглушка "Додати власну книгу" */
 .add-new-placeholder-card {
-    flex: 1;
+    flex: 0 0 352px; /* ЗАМІНИТИ flex: 1 на це */
+    scroll-snap-align: start; /* Додано для прилипання */
     height: 338px;
     border: 2px dashed #E2E8F0;
     border-radius: 16px;
